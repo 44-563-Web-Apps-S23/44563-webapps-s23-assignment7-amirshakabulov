@@ -64,9 +64,27 @@
 		let checkCount = 0;
 		let penalty = 0;
 		let lastCheck = 0;
-        let mouseLocation = 13;
-        let catLocation = 21;
         let gameOver = false;
+
+        let catLocation = random_loc();
+		function random_loc(){
+			let num = Math.floor(Math.random()*23)
+			if (num==12){
+				num = random_loc()
+				return num;
+			}
+			return num
+		}
+        
+        let mouseLocation = randomT();
+		function randomT(){
+			let num = Math.floor(Math.random()*23)
+			if (num==12){
+				num = randomT()
+				return num;
+			}
+			return num
+		}
 
         function check(position){
 			if (gameOver){
